@@ -1,0 +1,19 @@
+GEM
+  specs:
+    concurrent-ruby (1.1.6)
+    dry-core (0.4.9)
+      concurrent-ruby (~> 1.0)
+    dry-equalizer (0.3.0)
+    dry-monads (1.3.5)
+      concurrent-ruby (~> 1.0)
+      dry-core (~> 0.4, >= 0.4.4)
+      dry-equalizer
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  dry-monads
+
+BUNDLED WITH
+   2.1.4
