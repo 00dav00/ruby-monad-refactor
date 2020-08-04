@@ -1,6 +1,8 @@
 require 'dry/monads'
+require 'dry/monads/do'
 
 include Dry::Monads[:maybe]
+include Dry::Monads::Do.for(:result)
 
 def half(number)
   if number.even?
@@ -11,11 +13,9 @@ def half(number)
 end
 
 def result(number)
-  half(number).bind do |n|
-    half(n).bind do |n|
-      half(n)
-    end
-  end
+  n = yield half(number)
+  n = yield half(n)
+  half(n)
 end
 
 p result(20)
